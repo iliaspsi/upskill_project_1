@@ -107,7 +107,16 @@ public class ControlMenuController {
                     case "0":
                         System.out.println("Current default directory is: "+ path);
                         System.out.println("Enter new default directory path:");
-                        path = userselection();
+                        String newdir = userselection();
+                        if (!newdir.isEmpty()){
+                            path = newdir;
+                        }
+                        File f = new File(path);
+                        if (!f.exists()){
+                            throw new FileNotFoundException("directory not exists please try again");
+                        }else {
+                            System.out.println("New default directory is " + path);
+                        }
                         promptEnterKey();
                         printmenu(getmenuindicator());
                         break;
