@@ -31,6 +31,7 @@ public class ControlMenuController {
         menu1.add("2--> Exit");
         Collections.sort(menu1);
         ArrayList<String> menu2 = new ArrayList<String>();
+        menu2.add("0--> Change default directory");
         menu2.add("1--> List all files or folders in ascending order");
         menu2.add("2--> Add a file to the existing directory");
         menu2.add("3--> Delete a file or folder from the existing list");
@@ -103,6 +104,13 @@ public class ControlMenuController {
         }
         else {
                 switch (userselection) {
+                    case "0":
+                        System.out.println("Current default directory is: "+ path);
+                        System.out.println("Enter new default directory path:");
+                        path = userselection();
+                        promptEnterKey();
+                        printmenu(getmenuindicator());
+                        break;
                     case "1":
                         System.out.println("Enter directory path:");
                         String dir = userselection();
