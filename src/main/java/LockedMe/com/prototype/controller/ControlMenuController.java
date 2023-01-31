@@ -192,6 +192,11 @@ public class ControlMenuController {
     /*user is able to type in a directory or use the default*/
     /*upon success or FNF the program prints a message*/
     public void deletefile(String path,String filetodelete){
+        System.out.println("Enter the directory where to delete ");
+        String directory = userselection();
+        if (!directory.isEmpty()){
+            path = directory;
+        }
         File f = new File(path);
         File[] dir = f.listFiles();
         boolean isDeleted = true;
